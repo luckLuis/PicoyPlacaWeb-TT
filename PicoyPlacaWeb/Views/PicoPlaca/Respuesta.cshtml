@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Pico y Placa";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            margin-top: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .result-container {
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: #ffffff;
+            text-align: center;
+        }
+
+            .btn-custom:hover {
+                background-color: #0056b3;
+                color: #ffffff;
+            }
+
+        .alert-custom {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+        <div class="result-container">
+            @if (ViewBag.Resultado != null)
+            {
+                <div class="alert alert-info alert-custom" role="alert">
+                    @ViewBag.Resultado
+                </div>
+            }
+
+            @if (ViewBag.Mensaje != null)
+            {
+                <div class="alert alert-warning alert-custom" role="alert">
+                    @ViewBag.Mensaje
+                </div>
+            }
+
+            <a href="@Url.Page("/Index")" class="btn btn-custom btn-block">Regresar</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
